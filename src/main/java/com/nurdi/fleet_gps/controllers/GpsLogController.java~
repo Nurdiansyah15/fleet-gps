@@ -100,6 +100,6 @@ public class GpsLogController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable UUID id) {
         service.delete(id);
-        return ResponseBuilder.buildResponse(null, "Deleted", HttpStatus.OK);
+        return ResponseBuilder.buildResponse(null, "Deleted", HttpStatus.NO_CONTENT);
     }
 }

@@ -137,7 +137,7 @@ public class VehicleController {
                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
                                      @Parameter(
                                              description = "Start datetime (ISO format)",
-                                             example = "2023-01-01T00:00:00"
+                                             example = "2025-01-01T00:00:00"
                                      )
                                      LocalDateTime from,
 
@@ -148,7 +148,7 @@ public class VehicleController {
                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
                                      @Parameter(
                                              description = "End datetime (ISO format)",
-                                             example = "2023-12-31T23:59:59"
+                                             example = "2025-12-31T23:59:59"
                                      )
                                      LocalDateTime to,
 

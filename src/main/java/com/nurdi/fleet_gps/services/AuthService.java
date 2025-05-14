@@ -3,7 +3,6 @@ package com.nurdi.fleet_gps.services;
 import com.nurdi.fleet_gps.securities.JwtService;
 import com.nurdi.fleet_gps.utils.dtos.AuthDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 
@@ -15,8 +14,8 @@ public class AuthService {
 
     public AuthDto.ResponseLoginDto login(AuthDto.RequestLoginDto requestLoginDto) {
 
-        String hardcodedUsername = "admin";
-        String hardcodedPassword = "admin123";
+        String hardcodedUsername = "nurdiansyah";
+        String hardcodedPassword = "nurdiansyah";
 
         if (!requestLoginDto.getUsername().equals(hardcodedUsername) ||
                 !requestLoginDto.getPassword().equals(hardcodedPassword)) {

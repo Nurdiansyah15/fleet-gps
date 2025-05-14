@@ -19,10 +19,10 @@ import java.util.List;
 @Configuration
 @RequiredArgsConstructor
 public class SwaggerConfig implements WebMvcConfigurer {
-    @Value("${bezkoder.openapi.dev-url}")
+    @Value("${dev-url}")
     private String devUrl;
 
-    @Value("${bezkoder.openapi.prod-url}")
+    @Value("${prod-url}")
     private String prodUrl;
 
     @Bean
@@ -43,7 +43,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
         License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit/");
 
         Info info = new Info()
-                .title("Demo Service API")
+                .title("Fleet GPS Service API Documentation")
                 .version("1.0")
                 .contact(contact)
                 .description("This API exposes endpoints to manage demo.")

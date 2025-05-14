@@ -38,7 +38,7 @@ public class DatabaseSeeder implements CommandLineRunner {
 
         Vehicle car = new Vehicle();
         car.setPlateNumber("B 5678 XYZ");
-        car.setName("Mobil Direktur");
+        car.setName("Mobil Presiden");
         car.setType("CAR");
 
         vehicleRepo.saveAll(List.of(truck, car));

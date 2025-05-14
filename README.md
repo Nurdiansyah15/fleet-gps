@@ -1,4 +1,6 @@
-# Vehicle GPS Tracking API
+# Fleet GPS Tracking API
+
+_By Nurdiansyah_
 
 A RESTful API for GPS tracking and monitoring of vehicles, built using Java Spring Boot, secured with JWT
 authentication, and documented using Swagger.
@@ -52,7 +54,9 @@ authentication, and documented using Swagger.
 
 3. **Access the API**
     - The app will be available at: `http://localhost:8080`
-    - Swagger API Docs: [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
+    - Actually u must logged first at `http://localhost:8080/api/v1/auth/login` to get token, or
+    - Swagger API Docs: [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html) for best
+      testing experience.
 
 ---
 
@@ -61,15 +65,15 @@ authentication, and documented using Swagger.
 Login using the following credentials:
 
 ```bash
-username: admin
-password: admin123
+username: nurdiansyah
+password: nurdiansyah
 ```
 
 Upon login, you'll receive a JWT token which should be used in the `Authorization` header for all authenticated
 requests:
 
 ```
-Authorization: Bearer <your-token>
+Authorization: Bearer <generated-token>
 ```
 
 ---

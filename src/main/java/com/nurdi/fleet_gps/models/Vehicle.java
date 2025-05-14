@@ -31,5 +31,6 @@ public class Vehicle {
     private String type;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<GpsLog> gpsLogs;
 }

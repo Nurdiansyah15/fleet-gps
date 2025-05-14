@@ -14,11 +14,7 @@ import java.util.UUID;
 @Repository
 public interface GpsLogRepository extends JpaRepository<GpsLog, UUID> {
 
-    Page<GpsLog> findByVehicleIdAndTimestampBetween(
-            UUID vehicleId,
-            LocalDateTime start,
-            LocalDateTime end,
-            Pageable pageable);
+    Page<GpsLog> findByVehicleIdAndTimestampBetween(UUID vehicleId, LocalDateTime start, LocalDateTime end, Pageable pageable);
 
     Optional<GpsLog> findFirstByVehicleIdOrderByTimestampDesc(UUID vehicleId);
 

@@ -1,5 +1,6 @@
 package com.nurdi.fleet_gps.utils.dtos;
 
+import com.nurdi.fleet_gps.models.GpsLog;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
