@@ -1,0 +1,64 @@
+package com.nurdi.fleet_gps.services;
+
+import com.nurdi.fleet_gps.models.GpsLog;
+import com.nurdi.fleet_gps.models.Vehicle;
+import com.nurdi.fleet_gps.repositories.GpsLogRepository;
+import com.nurdi.fleet_gps.repositories.VehicleRepository;
+import com.nurdi.fleet_gps.utils.dtos.GpsLogDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Service
+@RequiredArgsConstructor
+public class GpsLogService {
+    @Autowired
+    private GpsLogRepository gpsLogRepository;
+
+    @Autowired
+    private VehicleRepository vehicleRepository;
+
+    public Page<GpsLog> getAll(Pageable pageable) {
+        return gpsLogRepository.findAll(pageable);
+    }
+
+    public GpsLog getOne(UUID id) {
+        return gpsLogRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("GpsLog not found"));
+    }
+
+    public GpsLog create(GpsLogDto.RequestGpsLogDto req) {
+        Vehicle v = vehicleRepository.findById(req.getVehicleId()).orElseThrow(() -> new IllegalArgumentException("Vehicle not found"));
+        boolean violation = req.getSpeed() > 100;
+        GpsLog log = GpsLog.builder()
+                .vehicle(v)
+                .latitude(req.getLatitude())
+                .longitude(req.getLongitude())
+                .speed(req.getSpeed())
+                .timestamp(LocalDateTime.now())
+                .speedViolation(violation)
+                .build();
+
+        return  gpsLogRepository.save(log);
+    }
+
+    public GpsLog update(UUID id, GpsLogDto.RequestGpsLogDto req) {
+        GpsLog log = gpsLogRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("GpsLog not found"));
+        Vehicle v = vehicleRepository.findById(req.getVehicleId()).orElseThrow(() -> new IllegalArgumentException("Vehicle not found"));
+        log.setVehicle(v);
+        log.setLatitude(req.getLatitude());
+        log.setLongitude(req.getLongitude());
+        log.setSpeed(req.getSpeed());
+        log.setSpeedViolation(req.getSpeed() > 100);
+        return gpsLogRepository.save(log);
+    }
+
+    public void delete(UUID id) {
+        gpsLogRepository.deleteById(id);
+    }
+}
+

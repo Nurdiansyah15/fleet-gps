@@ -1,0 +1,90 @@
+# Vehicle GPS Tracking API
+
+A RESTful API for GPS tracking and monitoring of vehicles, built using Java Spring Boot, secured with JWT authentication, and documented using Swagger.
+
+---
+
+## 🛠 Tech Stack
+
+- Java Spring Boot
+- Javax Validator
+- JWT (JSON Web Token)
+- PostgreSQL
+- Docker & Docker Compose
+- Swagger (API Documentation)
+- Git
+
+---
+
+## 📦 Features (Complete)
+
+- ✅ Post GPS coordinates for vehicles
+- ✅ Get current vehicle location
+- ✅ Get vehicle location history
+- ✅ Real-time flag for speed violations
+- ✅ JWT-based authentication (Login required)
+- ✅ Basic request data validation
+- ✅ Structured error handling
+- ✅ Pagination support for `findAll` endpoints
+- ✅ Consistent response format (standardized API)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Docker & Docker Compose installed on your machine
+
+### Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Nurdiansyah15/<your-repo-name>.git
+   cd <your-repo-name>
+   ```
+
+2. **Start the application**
+   ```bash
+   docker-compose up --build
+   ```
+
+3. **Access the API**
+   - The app will be available at: `http://localhost:8080`
+   - Swagger API Docs: [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
+
+---
+
+## 🔐 Authentication
+
+Login using the following credentials:
+
+```bash
+username: admin
+password: admin123
+```
+
+Upon login, you'll receive a JWT token which should be used in the `Authorization` header for all authenticated requests:
+
+```
+Authorization: Bearer <your-token>
+```
+
+---
+
+## 📄 API Documentation
+
+Interactive API documentation is available at:
+
+🔗 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+---
+
+## 📬 Contact
+
+- **Author**: Nurdiansyah
+- **GitHub**: [https://github.com/Nurdiansyah15](https://github.com/Nurdiansyah15)
+- **Email**: [nurdinurdiansyah15@gmail.com](mailto:nurdinurdiansyah15@gmail.com)
+- **Landing Page**: [https://porto-six-flax.vercel.app/](https://porto-six-flax.vercel.app/)
+
+

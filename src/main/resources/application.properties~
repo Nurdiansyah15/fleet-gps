@@ -1,0 +1,20 @@
+spring.application.name=fleet-gps
+# database
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/fleet_gps_db
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+# server
+server.port=8080
+# jpa
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.show-sql=true
+# jwt
+jwt.secret=javanurdinurdiansyah15@gmail.com
+jwt.expiration=86400000
+# swagger
+bezkoder.openapi.dev-url=http://localhost:8080
+bezkoder.openapi.prod-url=http://localhost:8080
+
+
