@@ -41,8 +41,8 @@ authentication, and documented using Swagger.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Nurdiansyah15/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/Nurdiansyah15/fleet-gps.git
+   cd flee-gps
    ```
 
 2. **Start the application**
