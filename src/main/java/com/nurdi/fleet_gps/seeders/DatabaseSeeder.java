@@ -61,7 +61,7 @@ public class DatabaseSeeder implements CommandLineRunner {
         log2.setVehicle(truck);
         log2.setLatitude(-6.1800);
         log2.setLongitude(106.8300);
-        log2.setSpeed(85.0);
+        log2.setSpeed(120.0);
         log2.setTimestamp(now.minusMinutes(30));
         log2.setSpeedViolation(true);
 

@@ -26,12 +26,11 @@ public class DatabaseSeeder implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        // Skip jika sudah ada data
+
         if (vehicleRepo.count() > 0) {
             return;
         }
 
-        // Buat kendaraan
         Vehicle truck = new Vehicle();
         truck.setPlateNumber("B 1234 ABC");
         truck.setName("Truck Angkut Barang");
@@ -42,11 +41,13 @@ public class DatabaseSeeder implements CommandLineRunner {
         car.setName("Mobil Direktur");
         car.setType("CAR");
 
-        // Simpan kendaraan
         vehicleRepo.saveAll(List.of(truck, car));
 
-        // Buat GPS Log
         LocalDateTime now = LocalDateTime.now();
+
+        if (gpsLogRepo.count() > 0) {
+            return;
+        }
 
         GpsLog log1 = new GpsLog();
         log1.setVehicle(truck);
@@ -72,7 +73,7 @@ public class DatabaseSeeder implements CommandLineRunner {
         log3.setTimestamp(now.minusHours(2));
         log3.setSpeedViolation(false);
 
-        // Simpan logs
+
         gpsLogRepo.saveAll(List.of(log1, log2, log3));
     }
 }
